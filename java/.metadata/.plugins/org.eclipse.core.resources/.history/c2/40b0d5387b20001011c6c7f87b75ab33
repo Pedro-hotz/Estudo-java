@@ -1,0 +1,43 @@
+package aplication;
+
+import java.util.Scanner;
+
+public class program {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		double xa, xb, xc, ya, yb, yc; 
+		
+		System.out.println("Digite os lados do triângulo X: ");
+		
+		xa = sc.nextDouble();
+		xb = sc.nextDouble();
+		xc = sc.nextDouble();
+		
+		System.out.println("Digite os lados do triângulo Y: ");
+		
+		ya = sc.nextDouble();
+		yb = sc.nextDouble();
+		yc = sc.nextDouble();
+		
+		double p = (xa + xb + xc) / 2.0;
+		double areaX = Math.sqrt( p * (p - xa) * ( p -xb) * (p - xb ) * ( p-xc )); 
+		
+		p = (ya + yb + yc) / 2.0;
+		double areaY = Math.sqrt( p * (p - ya) * ( p -yb) * (p - yb ) * ( p-yc ));
+		
+		System.out.println("O valor do trinãngulo X é:" + areaX);
+		System.out.println("O valor do trinãngulo X é:" + areaY);
+		
+		if(areaX > areaY) {
+			System.out.println("A área do triângulo X é maior !");			
+		}else {
+			System.out.println("A área do triângulo Y é maior !");			
+		}
+			
+		sc.close();
+	}
+
+}
