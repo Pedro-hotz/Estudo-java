@@ -56,6 +56,97 @@
 
 # POO # 
 
++ 1) Relacionamentos entre classes 
+
+    - Assosiação                                  => Um objeto de uma classe é referênciado como atributo de outra (tipo chave estrangeira ) 
+
+    - Agregação                                   => É instânciado fora da classe passado via constructor ou setters 
+
+    - Composição                                  => É instanciado dentro do constructor ou pelo metódo do objeto 
+
+    - Generalização / Especialização ( Herança )  => Extends 
+
+
++ 2)  Herança 
+
+    - SuperClasse => Classe mais geral, define comportamento e estado comúm 
+
+    - SupClasse => Herda da SuperClasse e pode adicionar seus atributos, metódos e manipular os estados herdados
+
+
+    Ex de Herança com "extends"
+
+        // SuperClasse 
+        class Pessoa {
+            String nome; 
+
+            public Pessoa(String nome) {
+                this.nome = nome;
+            }
+        }
+
+        SubClasse 
+        class PessoaFisica extends Pessoa {
+            String cpf; 
+        }
+
+
++ 3) Polimorfismo 
+
+    É sobre escrever um metódo que vem SuperClasse usando "@Override"
+
+    Ex. 
+
+        // SuperClasse 
+        Class animal{
+
+            public void som(){
+                System.out.print("Animal faz barulho")
+            }
+        }
+
+        // SubClasse 
+        public Cachorro extends animal {
+            @Override
+            public void som(){ 
+                System.out.print("au au!")
+            }
+        }
+
+
+
+# Swing # 
+
+- Para criar uma janela, deve se estender a classe Jframe. Representa a janela principal do aplicativo 
+
++ Components 
+    
+    + Jpanel => container generico e leve 
+
+    + Jlabel => Exibir icones ou textos que o users no pode editar 
+
+    + JTextField => input Text
+
+    + JPasswordField => input senha 
+
+    + JRadionButton => unica opção 
+
+    + JCheckBox => zero ou mais opç~çoes 
+
+    + ButtonGroup => compenente lógico, agrupa instancias de JRadioButton 
+
+    + Jbutton => dispara ação sempre que clicado 
+
+    + JComboBox => Dropdow que permite selecionar usuários em uma lista 
+
+
+# MVC # 
+
+- Controle => coneta o view com o model | Caso de Uso 
+
+- Vizualizacao => interface gráfica 
+
+- Modelo => Conexão com o DAO, metodos | Classes   
 
 
 
