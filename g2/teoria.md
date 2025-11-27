@@ -149,4 +149,11 @@
 - Modelo => Conexão com o DAO, metodos | Classes   
 
 
+# Java bens # 
+
+Constructor, setts and gets, atributos privados.
+
+
+
+
 
