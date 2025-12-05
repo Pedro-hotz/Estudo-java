@@ -12,4 +12,9 @@ data-hora global => Com timezone
 
 - Instância de uma data 
 
-    Instant d03 = Instant.now(); 
+    Instant d03 = Instant.now();  // gera a data com timezone 
+
+    localDate x = LocalDate.parse("2022-03-02") // converte string em date
+
+    Instant x = Instant.parse("2022-03-02T01:20:12Z") // converte string em date
+
