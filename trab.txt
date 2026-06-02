@@ -1,0 +1,401 @@
+-------------- Classe Aluno.java --------------
+public class Aluno {
+
+
+    // Atributos
+    private int    id;
+    private String nome;
+    private int    idade;
+    private String status;
+
+
+    // Construtor
+    public Aluno(int id, String nome, int idade, String status) {
+        this.id     = id;
+        this.nome   = nome;
+        this.idade  = idade;
+        this.status = status;
+    }
+
+
+    // Getters e Setters
+    public int    getId()     { return id; }
+    public String getNome()   { return nome; }
+    public int    getIdade()  { return idade; }
+    public String getStatus() { return status; }
+
+
+    public void setNome(String nome)     { this.nome   = nome; }
+    public void setIdade(int idade)      { this.idade  = idade; }
+    public void setStatus(String status) { this.status = status; }
+
+
+    // Métodos
+    public void Selecionar_aluno() {}
+    public void Cadastrar_aluno()  {}
+    public void Remover_aluno()    {}
+
+
+    @Override
+    public String toString() {
+        return "Aluno[id=" + id + ", nome=" + nome
+               + ", idade=" + idade + ", status=" + status + "]";
+    }
+}
+
+-------------- FIM Classe Aluno.java --------------
+
+
+-------------- Classe Disciplina.java --------------
+public class Disciplina {
+
+
+    // Atributos
+    private int    id;
+    private String nome;
+    private String cargaHoraria;
+    private String tipo;
+
+
+    // Construtor
+    public Disciplina(int id, String nome, String cargaHoraria, String tipo) {
+        this.id           = id;
+        this.nome         = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.tipo         = tipo;
+    }
+
+
+    // Getters e Setters
+    public int    getId()           { return id; }
+    public String getNome()         { return nome; }
+    public String getCargaHoraria() { return cargaHoraria; }
+    public String getTipo()         { return tipo; }
+
+
+    public void setNome(String nome)                 { this.nome         = nome; }
+    public void setCargaHoraria(String cargaHoraria) { this.cargaHoraria = cargaHoraria; }
+    public void setTipo(String tipo)                 { this.tipo         = tipo; }
+
+
+    // Métodos
+    public void Selecionar_disciplina() {}
+    public void Cadastrar_disciplina()  {}
+    public void Remover_disciplina()    {}
+
+
+    @Override
+    public String toString() {
+        return "Disciplina[id=" + id + ", nome=" + nome
+               + ", cargaHoraria=" + cargaHoraria + ", tipo=" + tipo + "]";
+    }
+}
+
+-------------- FIM Classe Disciplina.java --------------
+
+-------------- Classe Professor.java --------------
+public class Professor {
+
+
+    // Atributos
+    private int    id;
+    private String nome;
+    private String email;
+
+
+    // Construtor
+    public Professor(int id, String nome, String email) {
+        this.id    = id;
+        this.nome  = nome;
+        this.email = email;
+    }
+
+
+    // Getters e Setters
+    public int    getId()    { return id; }
+    public String getNome()  { return nome; }
+    public String getEmail() { return email; }
+
+
+    public void setNome(String nome)   { this.nome  = nome; }
+    public void setEmail(String email) { this.email = email; }
+
+
+    // Métodos
+    public void Selecionar_prof() {}
+    public void Cancelar_prof()   {}
+    public void Cadastrar_prof()  {}
+
+
+    @Override
+    public String toString() {
+        return "Professor[id=" + id + ", nome=" + nome + ", email=" + email + "]";
+    }
+}
+-------------- FIM Classe Professor.java --------------
+
+-------------- Classe Turma.java --------------
+public class Turma {
+
+
+    // Atributos
+    private int        id;
+    private String     nome;
+    private String     turno;
+    private String     anoLetivo;
+    private Disciplina disciplina;
+    private Professor  professor;
+
+
+    // Construtor
+    public Turma(int id, String nome, String turno, String anoLetivo,
+                 Disciplina disciplina, Professor professor) {
+        this.id          = id;
+        this.nome        = nome;
+        this.turno       = turno;
+        this.anoLetivo   = anoLetivo;
+        this.disciplina  = disciplina;
+        this.professor   = professor;
+    }
+
+
+    // Getters e Setters
+    public int        getId()          { return id; }
+    public String     getNome()        { return nome; }
+    public String     getTurno()       { return turno; }
+    public String     getAnoLetivo()   { return anoLetivo; }
+    public Disciplina getDisciplina()  { return disciplina; }
+    public Professor  getProfessor()   { return professor; }
+
+
+    public void setNome(String nome)             { this.nome      = nome; }
+    public void setTurno(String turno)           { this.turno     = turno; }
+    public void setAnoLetivo(String anoLetivo)   { this.anoLetivo = anoLetivo; }
+
+
+    // Métodos
+    public void Selecionar_turma() {}
+    public void Cancelar_turma()   {}
+    public void Suspender_turma()  {}
+    public void ativar_turma()     {}
+    public void Encerrar_turma()   {}
+    public void Cadastrar_turma()  {}
+
+
+    @Override
+    public String toString() {
+        return "Turma[id=" + id + ", nome=" + nome + ", turno=" + turno
+               + ", anoLetivo=" + anoLetivo
+               + ", disciplina=" + disciplina.getNome()
+               + ", professor=" + professor.getNome() + "]";
+    }
+}
+-------------- FIM Classe Turma.java --------------
+
+-------------- Classe Cursa.java -------------- 
+public class Cursa {
+
+
+    // Atributos
+    private int    id;
+    private String status;
+    private Aluno  aluno;
+    private Turma  turma;
+
+
+    // Construtor
+    public Cursa(int id, String status, Aluno aluno, Turma turma) {
+        this.id     = id;
+        this.status = status;
+        this.aluno  = aluno;
+        this.turma  = turma;
+    }
+
+
+    // Getters e Setters
+    public int    getId()     { return id; }
+    public String getStatus() { return status; }
+    public Aluno  getAluno()  { return aluno; }
+    public Turma  getTurma()  { return turma; }
+
+
+    public void setStatus(String status) { this.status = status; }
+
+
+    // Métodos
+    public void Cancelar_cursa()   {}
+    public void Cadastrar_cursa()  {}
+    public void Selecionar_cursa() {}
+
+
+    @Override
+    public String toString() {
+        return "Cursa[id=" + id + ", status=" + status
+               + ", aluno=" + aluno.getNome()
+               + ", turma=" + turma.getNome() + "]";
+    }
+}
+-------------- FIM Classe Cursa.java -------------- 
+
+-------------- Classe Prova.java -------------- 
+public class Prova {
+
+
+    // Atributos
+    private int    id;
+    private String tipo;
+    private String horaFim;
+    private String horaInicio;
+    private Turma  turma;
+
+
+    // Construtor
+    public Prova(int id, String tipo, String horaInicio, String horaFim,
+                 Turma turma) {
+        this.id         = id;
+        this.tipo       = tipo;
+        this.horaInicio = horaInicio;
+        this.horaFim    = horaFim;
+        this.turma      = turma;
+    }
+
+
+    // Getters e Setters
+    public int    getId()         { return id; }
+    public String getTipo()       { return tipo; }
+    public String getHoraInicio() { return horaInicio; }
+    public String getHoraFim()    { return horaFim; }
+    public Turma  getTurma()      { return turma; }
+
+
+    public void setTipo(String tipo)           { this.tipo       = tipo; }
+    public void setHoraInicio(String h)        { this.horaInicio = h; }
+    public void setHoraFim(String h)           { this.horaFim    = h; }
+
+
+    // Métodos
+    public void agendar_prova()    {}
+    public void Cancelar_prova()   {}
+    public void Cadastrar_prova()  {}
+    public void Publicar_prova()   {}
+    public void Ativar_prova()     {}
+    public void Selecionar_prova() {}
+
+
+    @Override
+    public String toString() {
+        return "Prova[id=" + id + ", tipo=" + tipo
+               + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim
+               + ", turma=" + turma.getNome() + "]";
+    }
+}
+-------------- FIM Classe Prova.java -------------- 
+
+-------------- Classe Realiza.java -------------- 
+public class Realiza {
+
+
+    // Atributos
+    private String data;
+    private int    nota;
+    private String obs;
+    private Cursa  cursa;
+    private Prova  prova;
+
+
+    // Construtor
+    public Realiza(String data, int nota, String obs,
+                   Cursa cursa, Prova prova) {
+        this.data  = data;
+        this.nota  = nota;
+        this.obs   = obs;
+        this.cursa = cursa;
+        this.prova = prova;
+    }
+
+
+    // Getters e Setters
+    public String getData()  { return data; }
+    public int    getNota()  { return nota; }
+    public String getObs()   { return obs; }
+    public Cursa  getCursa() { return cursa; }
+    public Prova  getProva() { return prova; }
+
+
+    public void setNota(int nota)    { this.nota = nota; }
+    public void setObs(String obs)   { this.obs  = obs; }
+
+
+    // Métodos
+    public void Cancelar_realiza()   {}
+    public void Cadastrar_realiza()  {}
+    public void Selecionar_realiza() {}
+
+
+    @Override
+    public String toString() {
+        return "Realiza[data=" + data + ", nota=" + nota + ", obs=" + obs
+               + ", aluno=" + cursa.getAluno().getNome()
+               + ", prova=" + prova.getTipo() + "]";
+    }
+}
+-------------- FIM Classe Realiza.java -------------- 
+
+-------------- Classe Aplicacao.java -------------- 
+public class Aplicacao {
+
+
+    public static void main(String[] args) {
+
+
+        // -- Disciplinas ------------------------------------------
+        Disciplina d1 = new Disciplina(1, "Matematica",   "60h", "Exata");
+        Disciplina d2 = new Disciplina(2, "Portugues",    "60h", "Humana");
+        Disciplina d3 = new Disciplina(3, "Programacao",  "80h", "Exata");
+
+
+        // -- Professores ------------------------------------------
+        Professor p1 = new Professor(1, "Prof. Silva",   "silva@uni.br");
+        Professor p2 = new Professor(2, "Prof. Oliveira", "oliveira@uni.br");
+
+
+        // -- Turmas -----------------------------------------------
+        Turma t1 = new Turma(1, "Turma A", "Manha",  "2025", d1, p1);
+        Turma t2 = new Turma(2, "Turma B", "Tarde",  "2025", d2, p2);
+        Turma t3 = new Turma(3, "Turma C", "Noite",  "2025", d3, p1);
+
+
+        // -- Alunos -----------------------------------------------
+        Aluno a1 = new Aluno(1, "Ana",    20, "ativo");
+        Aluno a2 = new Aluno(2, "Bruno",  22, "ativo");
+        Aluno a3 = new Aluno(3, "Carla",  21, "ativo");
+
+
+        // -- Matriculas (Cursa) -----------------------------------
+        Cursa c1 = new Cursa(1, "ativa", a1, t1);
+        Cursa c2 = new Cursa(2, "ativa", a2, t1);
+        Cursa c3 = new Cursa(3, "ativa", a3, t2);
+        Cursa c4 = new Cursa(4, "ativa", a1, t3);
+
+
+        // -- Provas -----------------------------------------------
+        Prova pr1 = new Prova(1, "AV1", "08:00", "10:00", t1);
+        Prova pr2 = new Prova(2, "AV1", "14:00", "16:00", t2);
+        Prova pr3 = new Prova(3, "AV2", "08:00", "10:00", t1);
+
+
+        // -- Realizacoes ------------------------------------------
+        Realiza r1 = new Realiza("2025-04-10", 8, "",  c1, pr1);
+        Realiza r2 = new Realiza("2025-04-10", 6, "",  c2, pr1);
+        Realiza r3 = new Realiza("2025-04-11", 9, "",  c3, pr2);
+        Realiza r4 = new Realiza("2025-06-12", 7, "",  c1, pr3);
+
+
+        // -- Exibindo objetos -------------------------------------
+        System.out.println(t1);
+        System.out.println(c1);
+        System.out.println(pr1);
+        System.out.println(r1);
+    }
+}
+-------------- FIM Classe Aplicacao.java -------------- 
